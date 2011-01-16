@@ -1,0 +1,7 @@
+config/database.yml
+public/javascripts/all.js
+public/stylesheets/all.css
+.DS_Store
+.project
+db/schema.rb
+log/*.log
