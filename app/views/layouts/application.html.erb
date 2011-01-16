@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+
+<html  xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title><%= params[:controller] + " | " + params[:action] -%></title>
+    <%= stylesheet_link_tag "reset", "style", :cache => true -%>
+    <%= javascript_include_tag :defaults, "application", :cache => true %>
+  </head>
+  <body id="body">
+    <%= render "shared/header" %>
+    <div id="content">
+      <div class = "navBar"><%= yield :tabs -%></div>
+      <%= render "shared/flash", :object => flash %>
+      <div id="leftColumn"><%= yield -%></div>
+      <div id="rightColumn"><%= yield :sidebar -%></div>
+    </div>
+    <%= render "shared/footer" %>
+  </body>
+</html>

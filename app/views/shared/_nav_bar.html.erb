@@ -1,0 +1,14 @@
+<% unless request.xhr? %>
+  <% current_project = nil  unless local_assigns[:current_project] %>
+
+  <% content_for :nav_bar do %>
+    <%= render :partial => 'shared/search_form' %>
+
+    <%= nav_bar_item("Home", '/') %>
+    <%= build_my_files_links %>
+    <%= build_stream_links(current_user.projects, current_project) %>
+    <%= nav_bar_item("View all streams »", projects_path) %>
+    <%= nav_bar_item("Trash", "/trash", :class => "trash") %>
+    <%= nav_bar_item("People", users_path, :class => "people") %>
+  <% end %>
+<% end %>
